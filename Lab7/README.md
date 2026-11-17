@@ -10,6 +10,6 @@ Hypothesis fuzz testing of `parse_coins`, `slot_position` and `change_due` (assi
 - `vending_machine.py` - hardened script
 - `test_vending_machine.py` - Hypothesis tests
 - `Lab7_Fuzz_Testing_Report.pdf` - report with the output of each handout step
-- `legacy/vending_machine_before.py`, `evidence/` - original script and raw outputs
+- `screenshots/`, `evidence/`, `legacy/vending_machine_before.py` - original script and raw outputs
 
 Run: `pip install hypothesis pytest && python -m pytest test_vending_machine.py`
