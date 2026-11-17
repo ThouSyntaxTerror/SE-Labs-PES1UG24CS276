@@ -1,0 +1,16 @@
+$ python -m pytest test_vending_machine.py   (fixed vending_machine.py)
+============================= test session starts =============================
+platform win32 -- Python 3.12.7, pytest-9.2.0, pluggy-1.7.0 -- C:\Users\athar\AppData\Local\Programs\Python\Python312\python.exe
+hypothesis profile 'default'
+rootdir: C:\Users\athar\OneDrive\Desktop\dhjhg\dbms\R\Lab7
+plugins: hypothesis-6.170.15
+collecting ... collected 6 items
+
+test_vending_machine.py::test_parse_coins_no_crash PASSED                [ 16%]
+test_vending_machine.py::test_slot_position_no_crash PASSED              [ 33%]
+test_vending_machine.py::test_change_due_no_crash PASSED                 [ 50%]
+test_vending_machine.py::test_parse_coins_roundtrip PASSED               [ 66%]
+test_vending_machine.py::test_slot_position_valid PASSED                 [ 83%]
+test_vending_machine.py::test_change_due_never_loses_money PASSED        [100%]
+
+============================== 6 passed in 0.96s ==============================

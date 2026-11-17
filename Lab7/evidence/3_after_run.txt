@@ -1,0 +1,21 @@
+$ python vending_machine.py   (fixed; input: "1,,3" / "B7" / "200/150")
+
+==== Running parse_coins ====
+Enter coin values as CSV (e.g. 5,10,25): Invalid input: invalid coin value: ''
+
+==== Running slot_position ====
+Enter a slot code (e.g. B7): Row and Column: (1, 6)
+
+==== Running change_due ====
+Enter paid/price (e.g. 200/150): Change Due: 10 five-coins
+
+$ python vending_machine.py   (fixed; input: "5,10,25" / "" / "200/151")
+
+==== Running parse_coins ====
+Enter coin values as CSV (e.g. 5,10,25): Coins: [5, 10, 25]
+
+==== Running slot_position ====
+Enter a slot code (e.g. B7): Invalid input: invalid slot code: ''
+
+==== Running change_due ====
+Enter paid/price (e.g. 200/150): Invalid input: change cannot be paid out in five-coins

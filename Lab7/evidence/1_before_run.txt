@@ -1,0 +1,12 @@
+$ python vending_machine.py   (input: "1,,3" / "" / "")
+==== Running parse_coins ====
+Enter coin values as CSV (e.g. 5,10,25): Traceback (most recent call last):
+  File "C:\Users\athar\OneDrive\Desktop\dhjhg\dbms\R\Lab7\legacy\vending_machine_before.py", line 31, in <module>
+    main()
+  File "C:\Users\athar\OneDrive\Desktop\dhjhg\dbms\R\Lab7\legacy\vending_machine_before.py", line 17, in main
+    result = parse_coins(user_input)
+             ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\athar\OneDrive\Desktop\dhjhg\dbms\R\Lab7\legacy\vending_machine_before.py", line 2, in parse_coins
+    return [int(c) for c in coins_csv.split(',')]
+            ^^^^^^
+ValueError: invalid literal for int() with base 10: ''

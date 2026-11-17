@@ -1,0 +1,103 @@
+$ python -m pytest test_vending_machine.py   (original vending_machine.py)
+FFF..F                                                                   [100%]
+================================== FAILURES ===================================
+__________________________ test_parse_coins_no_crash __________________________
+test_vending_machine.py:14: in test_parse_coins_no_crash
+    def test_parse_coins_no_crash(s):
+                   ^^^
+test_vending_machine.py:15: in test_parse_coins_no_crash
+    run(lambda: parse_coins(s))
+test_vending_machine.py:8: in run
+    return call()
+           ^^^^^^
+test_vending_machine.py:15: in <lambda>
+    run(lambda: parse_coins(s))
+                ^^^^^^^^^^^^^^
+vending_machine.py:2: in parse_coins
+    return [int(c) for c in coins_csv.split(',')]
+                            ^^^^^^^^^^^^^^^
+E   AttributeError: 'NoneType' object has no attribute 'split'
+E   Failing test case: test_parse_coins_no_crash(
+E       s=None,
+E   )
+_________________________ test_slot_position_no_crash _________________________
+  + Exception Group Traceback (most recent call last):
+  |   File "C:\Users\athar\OneDrive\Desktop\dhjhg\dbms\R\Lab7\test_vending_machine.py", line 19, in test_slot_position_no_crash
+  |     def test_slot_position_no_crash(s):
+  |                    ^^^
+  | ExceptionGroup: Hypothesis found 2 distinct failures. (2 sub-exceptions)
+  +-+---------------- 1 ----------------
+    | Traceback (most recent call last):
+    |   File "C:\Users\athar\OneDrive\Desktop\dhjhg\dbms\R\Lab7\test_vending_machine.py", line 20, in test_slot_position_no_crash
+    |     run(lambda: slot_position(s))
+    |   File "C:\Users\athar\OneDrive\Desktop\dhjhg\dbms\R\Lab7\test_vending_machine.py", line 8, in run
+    |     return call()
+    |            ^^^^^^
+    |   File "C:\Users\athar\OneDrive\Desktop\dhjhg\dbms\R\Lab7\test_vending_machine.py", line 20, in <lambda>
+    |     run(lambda: slot_position(s))
+    |                 ^^^^^^^^^^^^^^^^
+    |   File "C:\Users\athar\OneDrive\Desktop\dhjhg\dbms\R\Lab7\vending_machine.py", line 5, in slot_position
+    |     row = ord(code[0].upper()) - ord('A')
+    |               ~~~~^^^
+    | IndexError: string index out of range
+    | Failing test case: test_slot_position_no_crash(
+    |     s='',
+    | )
+    +---------------- 2 ----------------
+    | Traceback (most recent call last):
+    |   File "C:\Users\athar\OneDrive\Desktop\dhjhg\dbms\R\Lab7\test_vending_machine.py", line 20, in test_slot_position_no_crash
+    |     run(lambda: slot_position(s))
+    |   File "C:\Users\athar\OneDrive\Desktop\dhjhg\dbms\R\Lab7\test_vending_machine.py", line 8, in run
+    |     return call()
+    |            ^^^^^^
+    |   File "C:\Users\athar\OneDrive\Desktop\dhjhg\dbms\R\Lab7\test_vending_machine.py", line 20, in <lambda>
+    |     run(lambda: slot_position(s))
+    |                 ^^^^^^^^^^^^^^^^
+    |   File "C:\Users\athar\OneDrive\Desktop\dhjhg\dbms\R\Lab7\vending_machine.py", line 5, in slot_position
+    |     row = ord(code[0].upper()) - ord('A')
+    |               ~~~~^^^
+    | TypeError: 'NoneType' object is not subscriptable
+    | Failing test case: test_slot_position_no_crash(
+    |     s=None,
+    | )
+    +------------------------------------
+__________________________ test_change_due_no_crash ___________________________
+test_vending_machine.py:24: in test_change_due_no_crash
+    def test_change_due_no_crash(s):
+                   ^^^
+test_vending_machine.py:25: in test_change_due_no_crash
+    run(lambda: change_due(s))
+test_vending_machine.py:8: in run
+    return call()
+           ^^^^^^
+test_vending_machine.py:25: in <lambda>
+    run(lambda: change_due(s))
+                ^^^^^^^^^^^^^
+vending_machine.py:10: in change_due
+    paid, price = payment.split('/')
+                  ^^^^^^^^^^^^^
+E   AttributeError: 'NoneType' object has no attribute 'split'
+E   Failing test case: test_change_due_no_crash(
+E       s=None,
+E   )
+______________________ test_change_due_never_loses_money ______________________
+test_vending_machine.py:40: in test_change_due_never_loses_money
+    def test_change_due_never_loses_money(price, extra):
+                   ^^^
+test_vending_machine.py:46: in test_change_due_never_loses_money
+    assert result is None  # cannot be paid out in five-coins: must be rejected
+    ^^^^^^^^^^^^^^^^^^^^^
+E   AssertionError: assert '0 five-coins' is None
+E   Failing test case: test_change_due_never_loses_money(
+E       price=0,  # or any other generated value
+E       extra=1,
+E   )
+E   Explanation:
+E       These lines were always and only run by failing test cases:
+E           C:\Users\athar\OneDrive\Desktop\dhjhg\dbms\R\Lab7\test_vending_machine.py:46
+=========================== short test summary info ===========================
+FAILED test_vending_machine.py::test_parse_coins_no_crash - AttributeError: '...
+FAILED test_vending_machine.py::test_slot_position_no_crash - ExceptionGroup:...
+FAILED test_vending_machine.py::test_change_due_no_crash - AttributeError: 'N...
+FAILED test_vending_machine.py::test_change_due_never_loses_money - Assertion...
+4 failed, 2 passed in 2.24s
